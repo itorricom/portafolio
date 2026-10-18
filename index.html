@@ -799,6 +799,64 @@
       line-height: 1.45;
     }
 
+    /* Credenciales, Formación & Docencia extraídas del CV */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .credential-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+    }
+
+    .credential-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .credential-title span {
+      color: var(--accent);
+    }
+
+    .credential-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .credential-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .credential-item strong {
+      color: var(--text-main);
+      font-weight: 600;
+      display: block;
+      font-size: 0.88rem;
+    }
+
+    .credential-sub {
+      color: var(--text-subtle);
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+    }
+
     /* ==========================================================================
        CONTACTO
        ========================================================================== */
@@ -1053,9 +1111,9 @@
           <article class="project-card">
             <div class="project-header-bar">
               <div class="project-title-area">
-                <span class="project-label">ENDE Corani · Portal de Proveedores</span>
-                <h3 class="project-name">SICA — Sistema Integrado de Cotizaciones y Adquisiciones</h3>
-                <p class="project-client">Modernización del proceso de compras estatales</p>
+                <span class="project-label">Sector Energético · Portal de Proveedores</span>
+                <h3 class="project-name">SICA — Sistema de Cotizaciones y Adquisiciones</h3>
+                <p class="project-client">Portal de compras y contrataciones empresariales</p>
               </div>
               <div class="project-badge-type">
                 React 19 + NestJS + ERP
@@ -1064,19 +1122,7 @@
 
             <div class="project-body">
               <div class="project-summary-box">
-                Portal web que digitaliza la invitación a proveedores, recepción de cotizaciones con documentación adjunta y reflejo directo en el ERP de la empresa eléctrica, reemplazando un proceso antes gestionado de manera manual.
-              </div>
-
-              <!-- Diagrama de Arquitectura Simple -->
-              <div class="arch-callout">
-                <div class="arch-callout-header">
-                  <span>Esquema de Separación de Servicios</span>
-                  <span>SICA</span>
-                </div>
-[Frontend: React 19] ──(JWT + PKCE)──> [Backend Público: NestJS]
-                                               │ (Red interna privada)
-                                               ▼
-                                      [API Interna] ──(SELECT FOR UPDATE)──> [ERP Corporativo]
+                Portal web corporativo que digitaliza la invitación a proveedores, recepción de cotizaciones con documentación adjunta y sincronización directa con el ERP corporativo, modernizando un proceso antes gestionado de manera manual.
               </div>
 
               <h4 class="technical-achievements-title">
@@ -1087,8 +1133,8 @@
                 <li class="achievement-item">
                   <div class="achievement-icon">01</div>
                   <div>
-                    <strong>Separación de capas para proteger la base de datos:</strong> 
-                    Diseñé una estructura de dos servicios: un backend público que atiende a los proveedores sin credenciales de la base de datos del ERP, y una API interna privada (sin puerto expuesto a Internet) que es la única que interactúa con esos datos.
+                    <strong>Arquitectura desacoplada y principio de mínimo privilegio:</strong> 
+                    Diseñé un backend perimetral orientado a proveedores sin acceso directo ni credenciales a la base de datos del ERP, delegando las operaciones transaccionales críticas a un servicio interno con control estricto de accesos.
                   </div>
                 </li>
 
@@ -1369,6 +1415,83 @@
                 <div class="aside-heading">Cuidado de producción</div>
                 <div class="aside-desc">Los despliegues y migraciones de datos se planifican para evitar interrupciones o pérdidas de información.</div>
               </div>
+            </div>
+          </div>
+
+          <!-- Bloque de Formación, Docencia e Idiomas (Rescatado del CV) -->
+          <div class="credentials-grid">
+            <!-- Formación Académica -->
+            <div class="credential-card">
+              <h3 class="credential-title">
+                <span>//</span> Formación Académica
+              </h3>
+              <ul class="credential-list">
+                <li class="credential-item">
+                  <strong>Ingeniería de Sistemas</strong>
+                  <span class="credential-sub">Universidad Adventista de Bolivia</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Diplomado en Desarrollo Web Full Stack</strong>
+                  <span class="credential-sub">Universidad Privada del Valle (Univalle)</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Diplomado en Educación Superior</strong>
+                  <span class="credential-sub">Universidad Pública de El Alto (UPEA)</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Técnico Superior en Sistemas Informáticos</strong>
+                  <span class="credential-sub">Instituto Tecnológico INFOCAL</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Docencia en Educación Superior -->
+            <div class="credential-card">
+              <h3 class="credential-title">
+                <span>//</span> Docencia Superior (Infocal)
+              </h3>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Docente de carrera en Informática Industrial, dictando materias troncales:
+              </p>
+              <ul class="credential-list">
+                <li class="credential-item">
+                  <strong>Tecnología Web I &amp; II</strong>
+                  <span class="credential-sub">Arquitectura web, desarrollo frontend y backend</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Gestión y Seguridad en Redes</strong>
+                  <span class="credential-sub">Infraestructura, telemática y control de accesos</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Programación &amp; Taller de Graduación</strong>
+                  <span class="credential-sub">Mentoría técnica y evaluación de proyectos finales</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Idiomas & Fundamentos -->
+            <div class="credential-card">
+              <h3 class="credential-title">
+                <span>//</span> Idiomas &amp; Ecosistema
+              </h3>
+              <ul class="credential-list">
+                <li class="credential-item">
+                  <strong>Español</strong>
+                  <span class="credential-sub">Avanzado / Nativo</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Quechua</strong>
+                  <span class="credential-sub">Lengua materna</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Inglés</strong>
+                  <span class="credential-sub">Intermedio / Lectura técnica fluida</span>
+                </li>
+                <li class="credential-item">
+                  <strong>Otras tecnologías dominadas</strong>
+                  <span class="credential-sub">PHP (Laravel, PXP), Java (Spring Boot), Linux</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
