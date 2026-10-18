@@ -362,61 +362,22 @@
       width: 100%;
       height: 100%;
       border-radius: calc(var(--radius-md) - 4px);
-      background-color: var(--bg-surface-elevated);
+      background-color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      border: 1px dashed var(--border-subtle);
+      border: 1px solid var(--border-subtle);
     }
 
     .avatar-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 8%;
       display: block;
-    }
-
-    .avatar-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1.25rem;
-      gap: 0.85rem;
-    }
-
-    .avatar-initials-badge {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: var(--accent-glow);
-      border: 1px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .avatar-placeholder-text {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .avatar-placeholder-hint {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-subtle);
-      background: var(--pill-bg);
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--radius-sm);
     }
 
     .avatar-caption {
@@ -424,16 +385,24 @@
       bottom: 0.65rem;
       left: 0.65rem;
       right: 0.65rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
+      background: rgba(15, 20, 31, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-sm);
-      padding: 0.4rem 0.65rem;
+      padding: 0.45rem 0.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-muted);
+      font-size: 0.75rem;
+      color: #f1f5f9;
+      z-index: 2;
+    }
+
+    [data-theme="light"] .avatar-caption {
+      background: rgba(255, 255, 255, 0.92);
+      color: #0f172a;
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     /* ==========================================================================
@@ -994,7 +963,7 @@
           <h1 class="hero-title">Isidoro Torrico</h1>
           
           <div class="hero-subtitle">
-            Ingeniero de Software Full-Stack
+            Ingeniero de Sistemas · Desarrollador Full-Stack
           </div>
 
           <p class="hero-bio">
@@ -1004,7 +973,7 @@
           </p>
 
           <div class="hero-tags">
-            <span class="meta-tag">📍 Bolivia</span>
+            <span class="meta-tag">📍 Cochabamba, Bolivia</span>
             <span class="meta-tag">React 19 &amp; TypeScript</span>
             <span class="meta-tag">NestJS &amp; Node</span>
             <span class="meta-tag">PostgreSQL</span>
@@ -1025,28 +994,14 @@
           </div>
         </div>
 
-        <!-- Slot para Foto Personal / Avatar (Limpio y directo) -->
+        <!-- Slot para Foto Personal / Avatar -->
         <div class="hero-avatar-wrapper">
           <div class="avatar-frame">
             <div class="avatar-inner">
-              <!-- 
-                ====================================================================
-                INSTRUCCIÓN PARA TU FOTO:
-                Coloca tu archivo (ej. 'foto-isidoro.jpg') en esta carpeta y descomenta:
-                <img src="foto-isidoro.jpg" alt="Isidoro Torrico" class="avatar-img">
-                ====================================================================
-              -->
-              <div class="avatar-placeholder">
-                <div class="avatar-initials-badge">IT</div>
-                <div class="avatar-placeholder-text">
-                  <strong>Foto de perfil</strong>
-                </div>
-                <span class="avatar-placeholder-hint">foto-isidoro.jpg</span>
-              </div>
-
+              <img src="foto-isidoro.jpg" alt="Isidoro Torrico" class="avatar-img">
               <div class="avatar-caption">
                 <span>Isidoro Torrico</span>
-                <span style="color: var(--accent);">Bolivia</span>
+                <span style="color: var(--accent);">Cochabamba, BO</span>
               </div>
             </div>
           </div>
@@ -1386,14 +1341,14 @@
               </div>
               <h2 class="section-title">Sobre mí</h2>
               <p>
-                Soy un <strong>ingeniero de software boliviano</strong> con foco en desarrollo full-stack. 
-                A lo largo de mi experiencia he trabajado bastante en conectar sistemas nuevos con arquitecturas existentes que llevan años funcionando y que rara vez cuentan con manuales o documentación actualizada.
+                Soy <strong>Ingeniero de Sistemas</strong> radicado en Cochabamba, Bolivia, con experiencia tanto en desarrollo de software como en docencia técnica superior (materias como Tecnología Web y Gestión de Redes). 
+                A lo largo de mi trayectoria he trabajado en modernizar y conectar sistemas nuevos con arquitecturas existentes que llevan años en uso y que rara vez cuentan con manuales o documentación actualizada.
               </p>
               <p>
-                Me siento cómodo trabajando tanto en la interfaz (haciendo que sea rápida y limpia con React) como en el backend y la base de datos (definiendo contratos de API en NestJS y entendiendo cómo se mueven los datos en PostgreSQL).
+                Me siento cómodo trabajando tanto en la interfaz (construyendo UIs rápidas y tipadas con React 19 y TypeScript) como en el backend y la persistencia (diseñando APIs modulares en NestJS y gestionando transacciones y concurrencia en PostgreSQL).
               </p>
               <p>
-                Valoro mucho el trabajo metódico: revisar logs con calma para encontrar la causa raíz de un bug, escribir código predecible y probar bien antes de tocar cualquier cosa en producción.
+                Valoro mucho el trabajo metódico: revisar logs con calma para encontrar la causa raíz de un bug, escribir código predecible y probar bien antes de tocar cualquier componente en producción.
               </p>
             </div>
 
@@ -1443,7 +1398,7 @@
               <span id="emailLabel">isidoro.torrico.dev@gmail.com</span>
             </button>
 
-            <a href="https://linkedin.com/in/isidoro-torrico" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+            <a href="https://www.linkedin.com/in/itorrico" target="_blank" rel="noopener noreferrer" class="contact-method-card">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
                 <rect x="2" y="9" width="4" height="12"/>
@@ -1461,7 +1416,7 @@
           </div>
 
           <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-subtle);">
-            📍 Bolivia · Disponible para trabajo remoto
+            📍 Cochabamba, Bolivia · Disponible para trabajo remoto
           </div>
         </div>
       </div>
