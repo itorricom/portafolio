@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Isidoro Torrico — Desarrollador Full-Stack</title>
   <meta name="description" content="Portafolio de Isidoro Torrico. Desarrollador full-stack especializado en React, TypeScript, NestJS, integración de sistemas legados y seguridad práctica.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Google Fonts: Space Grotesk (Títulos), Plus Jakarta Sans (Lectura), JetBrains Mono (Código/Stack) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1261,6 +1264,162 @@
             </div>
           </article>
 
+          <!-- PROYECTO 3: INTRANET CORPORATIVA (CLIENT-INTRANET) -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <div class="project-title-area">
+                <span class="project-label">Sector Energético · Plataforma Interna</span>
+                <h3 class="project-name">Intranet Corporativa — client-intranet</h3>
+                <p class="project-client">Modernización y migración incremental de interfaz</p>
+              </div>
+              <div class="project-badge-type">
+                React 19 + shadcn/ui + Tailwind
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-summary-box">
+                Intranet corporativa para el personal interno de la empresa, comunicada con el ERP corporativo a través de un proxy inverso Nginx en el servidor.
+              </div>
+
+              <h4 class="technical-achievements-title">
+                Logros y Soluciones Técnicas
+              </h4>
+
+              <ul class="achievement-list">
+                <li class="achievement-item">
+                  <div class="achievement-icon">01</div>
+                  <div>
+                    <strong>Migración incremental a Design System moderno:</strong> 
+                    Migré la interfaz de una base Bootstrap / React-Bootstrap a un design system moderno (shadcn/ui sobre Base UI + Tailwind CSS) de forma incremental, módulo por módulo, sin detener la aplicación en producción, completando los 8 módulos del panel principal.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">02</div>
+                  <div>
+                    <strong>Adaptación técnica entre Tailwind v4 y Tailwind v3:</strong> 
+                    Adapté componentes de shadcn/ui escritos originalmente para Tailwind v4 a un proyecto en Tailwind v3. Detecté que cierta sintaxis nueva no arrojaba error de compilación pero tampoco generaba estilos en el navegador, y armé una lista de verificación sistemática para auditar cada componente nuevo que se agrega.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">03</div>
+                  <div>
+                    <strong>Resolución de convivencia y colisión de estilos CSS:</strong> 
+                    Resolví conflictos de especificidad y reseteos globales de estilos entre ambos sistemas de CSS (Bootstrap y Tailwind) durante la fase de convivencia de la migración.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">04</div>
+                  <div>
+                    <strong>Estandarización de flujo de datos y formularios:</strong> 
+                    Implementé TanStack Query para el estado del servidor, Zustand para el estado global del cliente, y React Hook Form con esquemas Zod para validación y tipado estricto en formularios, junto con notificaciones toast mediante Sonner.
+                  </div>
+                </li>
+              </ul>
+
+              <div class="stack-section">
+                <div class="stack-heading">Stack utilizado:</div>
+                <div class="stack-pills">
+                  <span class="stack-pill">React 19</span>
+                  <span class="stack-pill">Vite</span>
+                  <span class="stack-pill">React Router 7</span>
+                  <span class="stack-pill">TanStack Query</span>
+                  <span class="stack-pill">Zustand</span>
+                  <span class="stack-pill">React Hook Form</span>
+                  <span class="stack-pill">Zod</span>
+                  <span class="stack-pill">shadcn/ui (Base UI)</span>
+                  <span class="stack-pill">Tailwind CSS</span>
+                  <span class="stack-pill">Proxy Nginx</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROYECTO 4: MIAGUA CONCORDIA -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <div class="project-title-area">
+                <span class="project-label">Servicios Básicos · Gestión &amp; Facturación</span>
+                <h3 class="project-name">MiAgua Concordia — Sistema de Gestión de Agua Potable</h3>
+                <p class="project-client">Digitalización operativa y cobranzas de comités de agua</p>
+              </div>
+              <div class="project-badge-type">
+                Laravel 11 + Livewire 3 + Tailwind
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-summary-box">
+                Sistema web integral para la administración de comités y cooperativas de agua potable: gestión de socios y medidores, registro ágil de lecturas mensuales, cálculo tarifario escalonado, facturación en ventanilla y auditoría de recaudación.
+              </div>
+
+              <h4 class="technical-achievements-title">
+                Logros y Soluciones Técnicas
+              </h4>
+
+              <ul class="achievement-list">
+                <li class="achievement-item">
+                  <div class="achievement-icon">01</div>
+                  <div>
+                    <strong>Interfaces reactivas de alta velocidad (Livewire 3 + Alpine.js):</strong> 
+                    Diseñé componentes dinámicos como <code>LecturaRapida</code> y <code>SocioSelect</code> para agilizar la captura masiva de lecturas en campo y la atención en ventanilla, logrando una experiencia tipo SPA con validación en tiempo real sin recargar la página.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">02</div>
+                  <div>
+                    <strong>Motor de liquidación tarifaria y preavisos:</strong> 
+                    Implementé la lógica para el cálculo automático de consumos mensuales según las tarifas activas de la gestión, validación estricta de lecturas (consumo monótono creciente) y control transaccional de cuotas de mantenimiento, multas y transferencias de titularidad.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">03</div>
+                  <div>
+                    <strong>Generación e impresión documental (PDF):</strong> 
+                    Integré <code>laravel-dompdf</code> para la emisión e impresión térmica/estándar de recibos oficiales con detalle desglosado (<code>ReciboDetalle</code>), preavisos de cobranza para distribución domiciliaria y reportes periódicos de recaudación.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">04</div>
+                  <div>
+                    <strong>Trazabilidad y auditoría financiera:</strong> 
+                    Configuré auditoría sistemática con <code>spatie/laravel-activitylog</code> en todos los eventos críticos de cobranza, anulación de comprobantes y modificaciones de socios para garantizar transparencia contable ante la directiva.
+                  </div>
+                </li>
+
+                <li class="achievement-item">
+                  <div class="achievement-icon">05</div>
+                  <div>
+                    <strong>Testing de lógica de negocio con Pest PHP:</strong> 
+                    Diseñé pruebas automatizadas de integración y unitarias con Pest PHP para verificar la exactitud matemática de los cálculos de consumo, recargos y saldos en cada cambio de código.
+                  </div>
+                </li>
+              </ul>
+
+              <div class="stack-section">
+                <div class="stack-heading">Stack utilizado:</div>
+                <div class="stack-pills">
+                  <span class="stack-pill">Laravel 11</span>
+                  <span class="stack-pill">PHP 8.3</span>
+                  <span class="stack-pill">Livewire 3</span>
+                  <span class="stack-pill">Alpine.js</span>
+                  <span class="stack-pill">Tailwind CSS</span>
+                  <span class="stack-pill">MySQL / PostgreSQL</span>
+                  <span class="stack-pill">DomPDF</span>
+                  <span class="stack-pill">Spatie Activitylog</span>
+                  <span class="stack-pill">Pest PHP</span>
+                  <span class="stack-pill">Vite</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -1324,6 +1483,10 @@
               <li class="skill-item">
                 <span class="skill-bullet">•</span>
                 <span>Integraciones graduales cuidando la estabilidad operativa.</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-bullet">•</span>
+                <span>Migración incremental de interfaces legadas a design systems modernos sin interrumpir la operación.</span>
               </li>
             </ul>
           </div>
